@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="Icon" href="Images/Other/mobile mart.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #15f1be;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .login-box {
+            background-color: #e0f7fa;
+            /* Light Blue Background Color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+        }
+        
+        .login-box h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        .login-box label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .login-box input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+        .login-box input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+        
+        .login-box input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        .login-box .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        
+        .password-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        #password {
+            flex: 1;
+        }
+        
+        .show-password-container {
+            position: absolute;
+            right: 8px;
+            cursor: pointer;
+            font-size: 1.5em;
+            /* Adjust the font size to make the eye icon bigger */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <img src="Images\Other\mobile mart.png" alt="Logo" class="logo">
+        <h2>Login</h2>
+        <form action="index.html" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" required>
+                <div class="show-password-container" onclick="togglePasswordVisibility()">
+                    &#x1F441;
+                    <!-- Eye icon -->
+                </div>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        }
+    </script>
+</body>
+
+</html>
